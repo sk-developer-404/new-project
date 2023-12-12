@@ -1,1 +1,1 @@
-Hello
+{"name":"MgMg","age":"27","email":"mgmg568@gmail.com"}
