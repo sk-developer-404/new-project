@@ -65,7 +65,7 @@
 <body>
   <div id="chat-container">
     <div id="chat-box"></div>
-    <input type="text" id="message-input" placeholder="Type your message">
+    <input type="text" id="message-input" placeholder="Type your messages">
     <button id="send-button" onclick="sendMessage()">Send</button>
   </div>
 
@@ -95,9 +95,9 @@
       const message = messageInput.value;
       if (message.trim() !== '') {
         database.ref('messages').push({
-          message,
-          timestamp: firebase.database.ServerValue.TIMESTAMP
-        });
+  message,
+  timestamp: firebase.database.ServerValue.TIMESTAMP
+});
         messageInput.value = '';
       }
     }
