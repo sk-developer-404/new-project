@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+
+        .payment-option {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 1em;
+            padding: 1em;
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .payment-option:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Checkout</h1>
+</header>
+
+<main>
+    <div class="payment-option" onclick="connectCard('Visa')">
+        <h2>Connect Visa Card</h2>
+        <img src="https://github.com/sk-developer-404/new-project/raw/main/visa.jpeg" alt="Visa Logo" style="max-width: 100px;">
+    </div>
+
+    <div class="payment-option" onclick="connectCard('MasterCard')">
+        <h2>Connect MasterCard</h2>
+        <img src="https://github.com/sk-developer-404/new-project/raw/main/master.jpeg" alt="MasterCard Logo" style="max-width: 100px;">
+    </div>
+
+    <div class="payment-option" onclick="connectPayPal()">
+        <h2>Connect PayPal</h2>
+        <img src="https://github.com/sk-developer-404/new-project/raw/main/paypal.jpeg" alt="PayPal Logo" style="max-width: 100px;">
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 My Shop. All rights reserved.</p>
+</footer>
+
+<script>
+    function connectCard(cardType) {
+        alert('Connecting ' + cardType + ' Card...');
+        // Add logic to handle card connection, possibly redirect to a payment provider's page.
+    }
+
+    function connectPayPal() {
+        alert('Connecting PayPal...');
+        // Add logic to handle PayPal connection, possibly redirect to PayPal's login page.
+    }
+</script>
+
+</body>
+</html>
