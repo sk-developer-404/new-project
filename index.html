@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <title>Live Video Stream</title>
+</head>
+<body>
+    <video id="videoElement" width="640" height="480" autoplay></video>
+    <script>
+        // Replace with your Firebase config
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        var database = firebase.database();
+        var video = document.getElementById("videoElement");
+
+        // Access the webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                video.srcObject = stream;
+
+                // Push video stream to Firebase
+                var streamRef = database.ref("live-stream");
+                streamRef.set(stream.id);
+            })
+            .catch(function (error) {
+                console.error("Error accessing webcam:", error);
+            });
+    </script>
+</body>
+</html>
