@@ -3,42 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <title>Live Video Stream</title>
+    <title>My Shop</title>
+    <link rel="stylesheet" href="styles.css"> <!-- You can link to an external CSS file for styling -->
 </head>
 <body>
-    <video id="videoElement" width="640" height="480" autoplay></video>
-    <script>
-        // Replace with your Firebase config
-        var firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            databaseURL: "YOUR_DATABASE_URL",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-        var database = firebase.database();
-        var video = document.getElementById("videoElement");
+<header>
+    <h1>My Shop</h1>
+    <!-- Add navigation links or menu items here -->
+</header>
 
-        // Access the webcam
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                video.srcObject = stream;
+<section id="products">
+    <article class="product">
+        <img src="product1.jpg" alt="Product 1">
+        <h2>Product 1</h2>
+        <p>Description of Product 1.</p>
+        <p>$19.99</p>
+        <button>Add to Cart</button>
+    </article>
 
-                // Push video stream to Firebase
-                var streamRef = database.ref("live-stream");
-                streamRef.set(stream.id);
-            })
-            .catch(function (error) {
-                console.error("Error accessing webcam:", error);
-            });
-    </script>
+    <article class="product">
+        <img src="product2.jpg" alt="Product 2">
+        <h2>Product 2</h2>
+        <p>Description of Product 2.</p>
+        <p>$29.99</p>
+        <button>Add to Cart</button>
+    </article>
+
+    <!-- Add more product articles as needed -->
+</section>
+
+<footer>
+    <p>&copy; 2023 My Shop. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
