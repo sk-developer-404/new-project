@@ -3,23 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RTMP Video Player</title>
+    <title>Beautiful RTMP Video Player</title>
     <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
     <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
     <script src="https://vjs.zencdn.net/7.15.4/videojs-flash.js"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #video-container {
+            position: relative;
+            width: 70%;
+            max-width: 800px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #my-video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 
-<video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
-    <source src="rtmp://195.74.86.233/live/test" type="rtmp/mp4">
-    Your browser does not support the video tag.
-</video>
+<div id="video-container">
+    <video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
+        <source src="rtmp://195.74.86.233/live/test" type="rtmp/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 <script>
-    // Enable Flash fallback for RTMP
     videojs.options.flash.swf = "https://vjs.zencdn.net/7.15.4/video-js.swf";
-
-    // Initialize Video.js player
     var player = videojs('my-video');
 </script>
 
