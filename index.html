@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RTMP Demo Player</title>
-    <script src="https://content.jwplatform.com/libraries/your-jwplayer-key.js"></script>
+    <title>RTMP Video Player</title>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
+    <script src="https://vjs.zencdn.net/7.15.4/videojs-flash.js"></script>
 </head>
 <body>
 
-<div id="player"></div>
+<video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
+    <source src="rtmp://195.74.86.233/live/test" type="rtmp/mp4">
+    Your browser does not support the video tag.
+</video>
 
 <script>
-    var playerInstance = jwplayer("player");
-    playerInstance.setup({
-        file: "rtmp://195.74.86.233/live/test",
-        type: "rtmp",
-        width: "100%",
-        aspectratio: "16:9"
-    });
+    // Enable Flash fallback for RTMP
+    videojs.options.flash.swf = "https://vjs.zencdn.net/7.15.4/video-js.swf";
+
+    // Initialize Video.js player
+    var player = videojs('my-video');
 </script>
 
 </body>
