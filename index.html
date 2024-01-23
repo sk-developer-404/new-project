@@ -1,3 +1,24 @@
-<?php
-$message = "Hello, GitHub Codespaces!";
-echo $message;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTMP Demo Player</title>
+    <script src="https://content.jwplatform.com/libraries/your-jwplayer-key.js"></script>
+</head>
+<body>
+
+<div id="player"></div>
+
+<script>
+    var playerInstance = jwplayer("player");
+    playerInstance.setup({
+        file: "rtmp://195.74.86.233/live/test",
+        type: "rtmp",
+        width: "100%",
+        aspectratio: "16:9"
+    });
+</script>
+
+</body>
+</html>
