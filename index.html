@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.14.3/video-js.css">
     <script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
     <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
     <title>Football Live Stream</title>
@@ -12,22 +11,14 @@
 <body>
     <header>
         <h1>Football Live Stream</h1>
-        <nav>
-            <ul>
-                <li><a href="#live-stream">Live Stream</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#highlights">Highlights</a></li>
-                <li><a href="#news">News</a></li>
-            </ul>
-        </nav>
     </header>
     
     <main>
-        <section id="live-stream">
+        <section>
             <h2>Live Stream</h2>
             <div class="video-container">
-                <video id="liveVideo" class="video-js vjs-default-skin" preload="auto" width="100%" height="auto">
-                    <source src="http://live.sportstv.com.tr/hls/low/sportstv_fhd/index.m3u8" type="application/x-mpegURL">
+                <video id="liveVideo" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto">
+                    <source src="your-hls-url.m3u8" type="application/x-mpegURL">
                 </video>
             </div>
             <script>
@@ -35,9 +26,6 @@
                 player.play(); // Autoplay can be added based on user interaction to comply with browser policies.
             </script>
         </section>
-
-        <!-- Rest of the sections remain unchanged -->
-
     </main>
 
     <footer>
