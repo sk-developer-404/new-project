@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Live Stream</title>
-    <link rel="stylesheet" href="https://vjs.zencdn.net/7.14.3/video-js.css">
+    <script src="https://cdn.jsdelivr.net/npm/flv.js@1.5.0/dist/flv.min.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -71,8 +71,6 @@
             width: 100%;
         }
     </style>
-    <script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
-    <script src="https://github.com/videojs/videojs-flash/releases/download/v2.2.1/videojs-flash.min.js"></script>
 </head>
 <body>
     <header>
@@ -89,16 +87,21 @@
         <section>
             <h2>Live Stream</h2>
             <div class="video-container">
-                <video id="liveVideo" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto">
-                    <source src="rtmp://195.74.86.233/live/test" type="rtmp/mp4">
-                </video>
+                <video id="liveVideo" controls width="100%" height="auto"></video>
             </div>
             <script>
-                var player = videojs('liveVideo', {
-                    techOrder: ['flash'],
-                    flash: { swf: 'https://github.com/videojs/videojs-flash/releases/download/v2.2.1/videojs-flash.swf' }
-                });
-                player.play(); // Autoplay can be added based on user interaction to comply with browser policies.
+                if (flvjs.isSupported()) {
+                    var videoElement = document.getElementById('liveVideo');
+                    var flvPlayer = flvjs.createPlayer({
+                        type: 'rtmp',
+                        url: 'rtmp://195.74.86.233/live/test'
+                    });
+                    flvPlayer.attachMediaElement(videoElement);
+                    flvPlayer.load();
+                    flvPlayer.play();
+                } else {
+                    alert('Your browser does not support FLV playback.');
+                }
             </script>
         </section>
     </main>
