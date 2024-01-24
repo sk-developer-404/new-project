@@ -3,55 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="styles.css"> <!-- Your custom styles file -->
+    <link rel="stylesheet" href="styles.css">
     <title>Football Live Stream</title>
 </head>
 <body>
-    <header class="blue darken-4 white-text center-align">
-        <h1>Football Live Stream TV</h1>
-    </header>
-
-    <nav class="blue darken-2">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">Teams</a></li>
-                <li><a href="#">Live Stream</a></li>
-                <li><a href="#">Contact</a></li>
+    <header>
+        <h1>Football Live Stream</h1>
+        <nav>
+            <ul>
+                <li><a href="#live-stream">Live Stream</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#news">News</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <section class="main-content">
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">Match 1</span>
-                            <p>Teams: Team A vs Team B</p>
-                            <p>Date: January 25, 2024</p>
-                            <p>Time: 8:00 PM</p>
-                            <!-- Additional information goes here -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add similar structures for Match 2 and Match 3 -->
-
-            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="live-stream">
+            <h2>Live Stream</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/example" frameborder="0" allowfullscreen></iframe>
         </section>
-    </div>
 
-    <footer class="page-footer blue darken-4 white-text center-align">
-        <div class="container">
-            <p>&copy; 2024 Football Live Stream TV</p>
-        </div>
+        <section id="schedule">
+            <h2>Upcoming Matches</h2>
+            <ul>
+                <li>Team A vs Team B - Date and Time</li>
+                <li>Team C vs Team D - Date and Time</li>
+                <!-- Add more matches as needed -->
+            </ul>
+        </section>
+
+        <section id="highlights">
+            <h2>Highlights</h2>
+            <!-- Add highlight videos or content here -->
+        </section>
+
+        <section id="news">
+            <h2>Latest News</h2>
+            <!-- Add news articles or updates here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Football Live Stream</p>
     </footer>
 </body>
 </html>
