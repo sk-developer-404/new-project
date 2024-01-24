@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Live Stream</title>
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.14.3/video-js.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f7f7f7;
         }
 
         header {
@@ -45,11 +46,19 @@
             text-align: center;
         }
 
-        video {
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            margin: 20px 0;
+        }
+
+        #liveVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            display: block;
+            height: 100%;
         }
 
         footer {
@@ -62,6 +71,8 @@
             width: 100%;
         }
     </style>
+    <script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
+    <script src="https://github.com/videojs/videojs-flash/releases/download/v2.2.1/videojs-flash.min.js"></script>
 </head>
 <body>
     <header>
@@ -75,13 +86,20 @@
     </header>
     
     <main>
-        <section id="live-stream">
+        <section>
             <h2>Live Stream</h2>
-            <video controls>
-                <source src="rtmp://195.74.86.233/live/test" type="video/mp4">
-                <!-- Add more video sources or formats as needed -->
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-container">
+                <video id="liveVideo" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto">
+                    <source src="rtmp://195.74.86.233/live/test" type="rtmp/mp4">
+                </video>
+            </div>
+            <script>
+                var player = videojs('liveVideo', {
+                    techOrder: ['flash'],
+                    flash: { swf: 'https://github.com/videojs/videojs-flash/releases/download/v2.2.1/videojs-flash.swf' }
+                });
+                player.play(); // Autoplay can be added based on user interaction to comply with browser policies.
+            </script>
         </section>
     </main>
 
@@ -89,4 +107,4 @@
         <p>&copy; 2024 Football Live Stream</p>
     </footer>
 </body>
-</html>
+    </html>
