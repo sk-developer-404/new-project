@@ -25,33 +25,19 @@
     <main>
         <section id="live-stream">
             <h2>Live Stream</h2>
-            <video id="liveVideo" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
-                <source src="https://github.com/sk-developer-404/new-project/raw/main/my.mp4" type="application/x-mpegURL">
-            </video>
+            <div class="video-container">
+                <video id="liveVideo" class="video-js vjs-default-skin" preload="auto" width="100%" height="auto">
+                    <source src="your-hls-url.m3u8" type="application/x-mpegURL">
+                </video>
+            </div>
             <script>
                 var player = videojs('liveVideo');
                 player.play(); // Autoplay can be added based on user interaction to comply with browser policies.
             </script>
         </section>
 
-        <section id="schedule">
-            <h2>Upcoming Matches</h2>
-            <ul>
-                <li>Team A vs Team B - Date and Time</li>
-                <li>Team C vs Team D - Date and Time</li>
-                <!-- Add more matches as needed -->
-            </ul>
-        </section>
+        <!-- Rest of the sections remain unchanged -->
 
-        <section id="highlights">
-            <h2>Highlights</h2>
-            <!-- Add highlight videos or content here -->
-        </section>
-
-        <section id="news">
-            <h2>Latest News</h2>
-            <!-- Add news articles or updates here -->
-        </section>
     </main>
 
     <footer>
