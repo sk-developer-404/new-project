@@ -9,7 +9,7 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #f5f5f5;
     }
 
     header {
@@ -17,126 +17,59 @@
       color: #fff;
       padding: 10px;
       text-align: center;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    article {
-      width: 48%;
-      margin-bottom: 20px;
-    }
-
-    .stream-thumbnail {
-      width: 100%;
-      height: auto;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #333;
-      color: #fff;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    #countdown-container {
-      text-align: center;
-      margin-top: 20px;
     }
 
     nav {
+      background-color: #555;
+      color: #fff;
+      padding: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .profile-menu,
-    .search-menu,
-    .settings-menu {
-      padding: 10px;
-      margin: 0 10px;
-      color: #fff;
-      text-decoration: none;
+    nav .menu-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .search-bar {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .profile-settings {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-settings img {
+      border-radius: 50%;
+      margin-right: 10px;
     }
   </style>
-
-  <script>
-    // Set the countdown date (replace with your actual match date)
-    const countdownDate = new Date('2024-02-01T18:30:00').getTime();
-
-    // Update the countdown every 1 second
-    const countdownInterval = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the countdown in an element with the id "countdown"
-      document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      // If the countdown is over, display a message and clear the interval
-      if (distance < 0) {
-        clearInterval(countdownInterval);
-        document.getElementById('countdown').innerHTML = 'Match has started!';
-      }
-    }, 1000);
-  </script>
 </head>
-
 <body>
   <header>
     <h1>Football Live Stream TV</h1>
-    <nav>
-      <a href="#" class="profile-menu">Profile</a>
-      <a href="#" class="search-menu">Search</a>
-      <a href="#" class="settings-menu">Settings</a>
-    </nav>
   </header>
 
-  <main>
-    <section>
-      <article>
-        <img class="stream-thumbnail" src="your_image_url_1.jpg" alt="Live Stream 1">
-        <h2>Match Title 1</h2>
-        <p>Description for Match 1</p>
-      </article>
-
-      <article>
-        <img class="stream-thumbnail" src="your_image_url_2.jpg" alt="Live Stream 2">
-        <h2>Match Title 2</h2>
-        <p>Description for Match 2</p>
-      </article>
-    </section>
-
-    <!-- Add more articles for additional live streams -->
-
-    <div id="countdown-container">
-      <h2>Next Match Countdown:</h2>
-      <p id="countdown"></p>
+  <nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
     </div>
-  </main>
 
-  <footer>
-    <p>&copy; 2024 Football Live Stream TV. All rights reserved.</p>
-  </footer>
+    <div class="menu-icons">
+      <span>🔍</span>
+      <span class="profile-settings">
+        <img src="profile.jpg" alt="Profile Picture" width="30" height="30">
+        <span>Profile</span>
+      </span>
+      <span>⚙️</span>
+    </div>
+  </nav>
+
+  <!-- Your live stream content goes here -->
+
 </body>
 </html>
