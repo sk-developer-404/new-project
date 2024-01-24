@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
     <title>Football Live Stream</title>
 </head>
 <body>
@@ -22,7 +25,13 @@
     <main>
         <section id="live-stream">
             <h2>Live Stream</h2>
-            <iframe width="560" height="315" src="https://youtu.be/25553QB8uxU?feature=shared" frameborder="0" allowfullscreen></iframe>
+            <video id="liveVideo" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
+                <source src="your-hls-url.m3u8" type="application/x-mpegURL">
+            </video>
+            <script>
+                var player = videojs('liveVideo');
+                player.play(); // Autoplay can be added based on user interaction to comply with browser policies.
+            </script>
         </section>
 
         <section id="schedule">
