@@ -17,6 +17,8 @@
       color: #fff;
       padding: 10px;
       text-align: center;
+      display: flex;
+      justify-content: space-between;
     }
 
     main {
@@ -52,11 +54,62 @@
       bottom: 0;
       width: 100%;
     }
+
+    #countdown-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .profile-menu,
+    .search-menu,
+    .settings-menu {
+      padding: 10px;
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+    }
   </style>
+
+  <script>
+    // Set the countdown date (replace with your actual match date)
+    const countdownDate = new Date('2024-02-01T18:30:00').getTime();
+
+    // Update the countdown every 1 second
+    const countdownInterval = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown in an element with the id "countdown"
+      document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // If the countdown is over, display a message and clear the interval
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('countdown').innerHTML = 'Match has started!';
+      }
+    }, 1000);
+  </script>
 </head>
+
 <body>
   <header>
     <h1>Football Live Stream TV</h1>
+    <nav>
+      <a href="#" class="profile-menu">Profile</a>
+      <a href="#" class="search-menu">Search</a>
+      <a href="#" class="settings-menu">Settings</a>
+    </nav>
   </header>
 
   <main>
@@ -76,6 +129,10 @@
 
     <!-- Add more articles for additional live streams -->
 
+    <div id="countdown-container">
+      <h2>Next Match Countdown:</h2>
+      <p id="countdown"></p>
+    </div>
   </main>
 
   <footer>
