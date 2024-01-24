@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Live Stream</title>
-    <link rel="stylesheet" href="https://vjs.zencdn.net/7.14.3/video-js.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f0f0;
         }
 
         header {
@@ -42,21 +42,14 @@
 
         main {
             padding: 1em;
+            text-align: center;
         }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
+        video {
             width: 100%;
-            height: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
         }
 
         footer {
@@ -69,8 +62,6 @@
             width: 100%;
         }
     </style>
-    <script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
-    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 </head>
 <body>
     <header>
@@ -84,17 +75,13 @@
     </header>
     
     <main>
-        <section>
+        <section id="live-stream">
             <h2>Live Stream</h2>
-            <div class="video-container">
-                <video id="liveVideo" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto">
-                    <source src="http://live.sportstv.com.tr/hls/low/sportstv_fhd/index.m3u8" type="application/x-mpegURL">
-                </video>
-            </div>
-            <script>
-                var player = videojs('liveVideo');
-                player.play(); // Autoplay can be added based on user interaction to comply with browser policies.
-            </script>
+            <video controls>
+                <source src="your-video-url.mp4" type="video/mp4">
+                <!-- Add more video sources or formats as needed -->
+                Your browser does not support the video tag.
+            </video>
         </section>
     </main>
 
