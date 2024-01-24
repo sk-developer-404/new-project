@@ -1,49 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful RTMP Video Player</title>
-    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
-    <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
-    <script src="https://vjs.zencdn.net/7.15.4/videojs-flash.js"></script>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f2f2f2;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Live Stream TV</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        #video-container {
-            position: relative;
-            width: 70%;
-            max-width: 800px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
 
-        #my-video {
-            width: 100%;
-            height: auto;
-        }
-    </style>
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    article {
+      width: 48%;
+      margin-bottom: 20px;
+    }
+
+    .stream-thumbnail {
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Football Live Stream TV</h1>
+  </header>
 
-<div id="video-container">
-    <video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
-        <source src="https://github.com/sk-developer-404/new-project/raw/main/my.mp4" type="rtmp/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+  <main>
+    <section>
+      <article>
+        <img class="stream-thumbnail" src="your_image_url_1.jpg" alt="Live Stream 1">
+        <h2>Match Title 1</h2>
+        <p>Description for Match 1</p>
+      </article>
 
-<script>
-    videojs.options.flash.swf = "https://vjs.zencdn.net/7.15.4/video-js.swf";
-    var player = videojs('my-video');
-</script>
+      <article>
+        <img class="stream-thumbnail" src="your_image_url_2.jpg" alt="Live Stream 2">
+        <h2>Match Title 2</h2>
+        <p>Description for Match 2</p>
+      </article>
+    </section>
 
+    <!-- Add more articles for additional live streams -->
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Football Live Stream TV. All rights reserved.</p>
+  </footer>
 </body>
 </html>
