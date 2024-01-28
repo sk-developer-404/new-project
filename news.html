@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>News - Football Live Stream</title>
+</head>
+<body>
+    <header>
+        <h1>Football Live Stream</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="video.html">Video Player</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="newsList">
+        <h2>Latest News</h2>
+        <!-- News list will be dynamically generated here -->
+    </section>
+
+    <script>
+        // Fetch news data from the URL
+        fetch('news.json')
+            .then(response => response.json())
+            .then(data => {
+                // Create HTML for each news article
+                const newsListSection = document.getElementById('newsList');
+                data.newsArticles.forEach(article => {
+                    const articleItem = document.createElement('div');
+                    articleItem.innerHTML = `
+                        <div>
+                            <h3>${article.title}</h3>
+                            <p>${article.date}</p>
+                            <p>${article.content}</p>
+                        </div>
+                    `;
+                    newsListSection.appendChild(articleItem);
+                });
+            })
+            .catch(error => console.error('Error fetching news data:', error));
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Football Live Stream</p>
+    </footer>
+</body>
+</html>
