@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
         }
@@ -44,11 +44,23 @@
         .no-stream-status {
             color: red;
         }
+
+        #nextNewsButton {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
 <div id="matchContainer"></div>
+
+<button id="nextNewsButton" onclick="goToNewsPage()">Next News Page</button>
 
 <script>
     // Load JSON data from the provided URL and generate match cards
@@ -102,6 +114,10 @@
             });
         })
         .catch(error => console.error('Error loading JSON:', error));
+
+    function goToNewsPage() {
+        window.location.href = 'news.html';
+    }
 </script>
 
 </body>
