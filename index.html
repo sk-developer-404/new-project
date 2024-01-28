@@ -18,6 +18,7 @@
         }
 
         .match-card {
+            cursor: pointer;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -51,8 +52,8 @@
 <div id="matchContainer"></div>
 
 <script>
-    // Load JSON data and generate match cards
-    fetch('data.json')
+    // Load JSON data from the provided URL and generate match cards
+    fetch('https://github.com/sk-developer-404/new-project/raw/main/data.json')
         .then(response => response.json())
         .then(data => {
             const matchContainer = document.getElementById('matchContainer');
@@ -78,6 +79,9 @@
                 const teamNames = document.createElement('p');
                 teamNames.innerText = `${match.name1} vs ${match.name2}`;
 
+                const matchDate = document.createElement('p');
+                matchDate.innerText = `Date: ${match.date}`;
+
                 const streamStatus = document.createElement('p');
                 streamStatus.className = match.stream ? 'stream-status' : 'no-stream-status';
                 streamStatus.innerText = match.stream ? 'Live Stream Available' : 'No Live Stream';
@@ -86,7 +90,14 @@
                 matchCard.appendChild(vsText);
                 matchCard.appendChild(team2Logo);
                 matchCard.appendChild(teamNames);
+                matchCard.appendChild(matchDate);
                 matchCard.appendChild(streamStatus);
+
+                matchCard.addEventListener('click', () => {
+                    if (match.stream) {
+                        window.location.href = `video-player.html?stream=${encodeURIComponent(match.streamLink)}`;
+                    }
+                });
 
                 matchContainer.appendChild(matchCard);
             });
@@ -95,4 +106,4 @@
 </script>
 
 </body>
-    </html>
+</html>
