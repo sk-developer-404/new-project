@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home - Football Live Stream</title>
+</head>
+<body>
+    <header>
+        <h1>Football Live Stream</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="video.html">Video Player</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="matchList">
+        <h2>Upcoming Matches</h2>
+        <!-- Match list will be dynamically generated here -->
+    </section>
+
+    <script>
+        // Fetch match data from the URL
+        fetch('match.json')
+            .then(response => response.json())
+            .then(data => {
+                // Create HTML for each match
+                const matchListSection = document.getElementById('matchList');
+                data.matches.forEach(match => {
+                    const matchItem = document.createElement('div');
+                    matchItem.innerHTML = `
+                        <div>
+                            <h3>${match.team1} vs ${match.team2}</h3>
+                            <p>Date: ${match.date}</p>
+                            <p>Time: ${match.time}</p>
+                        </div>
+                    `;
+                    matchListSection.appendChild(matchItem);
+                });
+            })
+            .catch(error => console.error('Error fetching match data:', error));
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Football Live Stream</p>
+    </footer>
+</body>
+          </html>
