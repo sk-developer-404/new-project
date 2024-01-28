@@ -2,6 +2,7 @@
     {
         "date": "01/03/2024 05:30 PM",
         "stream": true,
+        "streamLink": "https://stream1.com",
         "image1": "https://github.com/sk-developer-404/new-project/raw/main/img1.png",
         "name1": "Manchester United",
         "image2": "https://github.com/sk-developer-404/new-project/raw/main/img2.png",
@@ -18,6 +19,7 @@
     {
         "date": "03/03/2024 07:45 PM",
         "stream": true,
+        "streamLink": "https://stream2.com",
         "image1": "https://github.com/sk-developer-404/new-project/raw/main/img1.png",
         "name1": "Bayern Munich",
         "image2": "https://github.com/sk-developer-404/new-project/raw/main/img2.png",
