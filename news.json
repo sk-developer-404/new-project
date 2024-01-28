@@ -1,0 +1,20 @@
+{
+  "newsArticles": [
+    {
+      "title": "Exciting Match Results",
+      "date": "2024-02-01",
+      "content": "Team A secured a thrilling victory against Team B in yesterday's match, with a final score of 3-2."
+    },
+    {
+      "title": "Player Spotlight: Star Striker's Record-breaking Performance",
+      "date": "2024-02-03",
+      "content": "The star striker of Team C set a new record by scoring five goals in a single match, becoming the top scorer of the season."
+    },
+    {
+      "title": "Upcoming Tournaments Announcement",
+      "date": "2024-02-05",
+      "content": "Exciting news! The football league announces upcoming tournaments featuring teams from around the world. Stay tuned for more details."
+    }
+    // Add more news articles as needed
+  ]
+}
