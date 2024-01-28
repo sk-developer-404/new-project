@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Live Stream Video Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #videoContainer {
+            text-align: center;
+        }
+
+        #videoPlayer {
+            max-width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div id="videoContainer">
+    <video id="videoPlayer" controls autoplay>
+        <source id="videoSource" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const streamUrl = urlParams.get('stream');
+
+    if (streamUrl) {
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoSource = document.getElementById('videoSource');
+
+        videoSource.src = decodeURIComponent(streamUrl);
+        videoPlayer.load();
+    } else {
+        // Handle case where no stream URL is provided
+        alert('No stream URL provided.');
+    }
+</script>
+
+</body>
+</html>
