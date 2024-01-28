@@ -1,0 +1,62 @@
+footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Football News</h1>
+</header>
+
+<nav>
+    <div class="profile-section">
+        <div class="profile">Profile</div>
+        <div class="settings">Settings</div>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+    </div>
+</nav>
+
+<div class="news-container" id="newsContainer"></div>
+
+<footer>
+    &copy; 2024 Football News
+</footer>
+
+<script>
+    // Load JSON data from the provided URL and generate news cards
+    fetch('news-data.json')
+        .then(response => response.json())
+        .then(data => {
+            const newsContainer = document.getElementById('newsContainer');
+
+            data.forEach(news => {
+                const newsCard = document.createElement('div');
+                newsCard.className = 'news-card';
+
+                const newsTitle = document.createElement('h2');
+                newsTitle.innerText = news.title;
+
+                const newsContent = document.createElement('p');
+                newsContent.innerText = news.content;
+
+                const newsDate = document.createElement('p');
+                newsDate.innerText = `Published on: ${news.date}`;
+
+                newsCard.appendChild(newsTitle);
+                newsCard.appendChild(newsContent);
+                newsCard.appendChild(newsDate);
+
+                newsContainer.appendChild(newsCard);
+            });
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+</script>
+
+</body>
+</html>
