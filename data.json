@@ -1,0 +1,26 @@
+[
+    {
+        "date": "01/03/2024 05:30 PM",
+        "stream": true,
+        "image1": "https://team1logo.com/image.png",
+        "name1": "Manchester United",
+        "image2": "https://team2logo.com/image.png",
+        "name2": "Liverpool"
+    },
+    {
+        "date": "02/03/2024 03:00 PM",
+        "stream": false,
+        "image1": "https://team3logo.com/image.png",
+        "name1": "Barcelona",
+        "image2": "https://team4logo.com/image.png",
+        "name2": "Real Madrid"
+    },
+    {
+        "date": "03/03/2024 07:45 PM",
+        "stream": true,
+        "image1": "https://team5logo.com/image.png",
+        "name1": "Bayern Munich",
+        "image2": "https://team6logo.com/image.png",
+        "name2": "Paris Saint-Germain"
+    }
+]
